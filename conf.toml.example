@@ -1,0 +1,9 @@
+[data]
+auth = [
+  { email = "xxx@gmail.com", password = "xxx" }
+]
+
+[proxies]
+data=[
+    "",
+]
