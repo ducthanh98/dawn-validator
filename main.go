@@ -3,6 +3,7 @@ package main
 import (
 	"blockmesh/constant"
 	"blockmesh/request"
+	"crypto/tls"
 	"fmt"
 	"github.com/go-resty/resty/v2"
 	"github.com/mattn/go-colorable"
@@ -55,6 +56,7 @@ func main() {
 func ping(proxyURL string, authInfo request.Authentication) {
 	rand.Seed(time.Now().UnixNano())
 	client := resty.New().SetProxy(proxyURL).
+		SetTLSClientConfig(&tls.Config{InsecureSkipVerify: true}).
 		SetHeader("content-type", "application/json").
 		SetHeader("origin", "chrome-extension://fpdkjdnhkakefebpekbdhillbhonfjjp").
 		SetHeader("accept", "*/*").
