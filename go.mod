@@ -1,4 +1,4 @@
-module blockmesh
+module dawn-validator
 
 go 1.22.3
 
