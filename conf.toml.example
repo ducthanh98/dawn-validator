@@ -1,6 +1,6 @@
 [data]
 auth = [
-  { email = "xxx@gmail.com", password = "xxx" }
+  { email = "xxx@gmail.com", password = "<Put bearer token here>" }
 ]
 
 [proxies]
