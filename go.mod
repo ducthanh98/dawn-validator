@@ -4,6 +4,7 @@ go 1.22.3
 
 require (
 	github.com/go-resty/resty/v2 v2.14.0
+	github.com/go-telegram/bot v1.8.2
 	github.com/mattn/go-colorable v0.1.13
 	github.com/spf13/viper v1.19.0
 	go.uber.org/zap v1.21.0

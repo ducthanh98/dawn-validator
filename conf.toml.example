@@ -7,3 +7,7 @@ auth = [
 data=[
     "",
 ]
+
+[telegram]
+bot_token = ""
+chat_id = ""
