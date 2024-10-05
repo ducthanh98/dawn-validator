@@ -24,27 +24,8 @@ import (
 
 var logger *zap.Logger
 
-type PointResponse struct {
-	Status  bool   `json:"status"`
-	Message string `json:"message"`
-	Data    struct {
-		ReferralPoint struct {
-			Commission float64 `json:"commission"`
-		} `json:"referralPoint"`
-		RewardPoint struct {
-			Points           float64 `json:"points"`
-			RegisterPoints   float64 `json:"registerpoints"`
-			SignInPoints     float64 `json:"signinpoints"`
-			TwitterXIDPoints float64 `json:"twitter_x_id_points"`
-			DiscordIDPoints  float64 `json:"discordid_points"`
-			TelegramIDPoints float64 `json:"telegramid_points"`
-			BonusPoints      float64 `json:"bonus_points"`
-		} `json:"rewardPoint"`
-	} `json:"data"`
-}
-
 func calculateTotalPoints(jsonResponse string) (float64, error) {
-	var response PointResponse
+	var response request.PointResponse
 	err := json.Unmarshal([]byte(jsonResponse), &response)
 	if err != nil {
 		return 0, fmt.Errorf("error parsing JSON: %v", err)
